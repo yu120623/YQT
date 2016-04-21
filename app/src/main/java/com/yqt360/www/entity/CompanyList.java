@@ -10,12 +10,19 @@ public class CompanyList extends HttpData implements java.io.Serializable {
     List<Company> data;
 
     public class Company {
-        public Integer companyID;
+        public String companyAID;
         public String companyName;
         public String regStatus;
         public String legalPersonName;
-        public String regCapital;
-        public String establishTime;
+        public String industry;
+
+        public String getCompanyAID() {
+            return companyAID;
+        }
+
+        public void setCompanyAID(String companyAID) {
+            this.companyAID = companyAID;
+        }
 
         public String getCompanyName() {
             return companyName;
@@ -23,14 +30,6 @@ public class CompanyList extends HttpData implements java.io.Serializable {
 
         public void setCompanyName(String companyName) {
             this.companyName = companyName;
-        }
-
-        public Integer getCompanyID() {
-            return companyID;
-        }
-
-        public void setCompanyID(Integer companyID) {
-            this.companyID = companyID;
         }
 
         public String getRegStatus() {
@@ -49,20 +48,12 @@ public class CompanyList extends HttpData implements java.io.Serializable {
             this.legalPersonName = legalPersonName;
         }
 
-        public String getRegCapital() {
-            return regCapital;
+        public String getIndustry() {
+            return industry;
         }
 
-        public void setRegCapital(String regCapital) {
-            this.regCapital = regCapital;
-        }
-
-        public String getEstablishTime() {
-            return establishTime;
-        }
-
-        public void setEstablishTime(String establishTime) {
-            this.establishTime = establishTime;
+        public void setIndustry(String industry) {
+            this.industry = industry;
         }
     }
 

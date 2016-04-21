@@ -9,6 +9,7 @@ public class HttpData {
     public Integer status;
     public String message;
     public List<CompanyList.Company> data;
+
     public List<CompanyList.Company> getData() {
         return data;
     }
@@ -16,13 +17,6 @@ public class HttpData {
     public void setData(List<CompanyList.Company> data) {
         this.data = data;
     }
-
-
-
-
-
-
-
 
 
     public Integer getStatus() {

@@ -38,26 +38,21 @@ public class CompanyListActivity extends BaseActivity {
     private List<CompanyList.Company> companyDataList = new ArrayList<>();
     private CompanyListAdapter companyListAdapter;
 
-    String strJson = "{\"status\":0," +
+    String strJson = "{" +
+            "\"status\":0," +
             "\"message\":\"\"," +
-            "\"data\":[" +
-            "{" +
+            "\"data\":[{" +
             "\"companyAID\":\"827ccb0eea8a706c4c34a16891f84e7b\"," +
             "\"companyName\":\"苏州中新精密工业有限公司\"," +
             "\"regStatus\":\"在业\"," +
             "\"legalPersonName\":\"颜寿水\"," +
-            "\"regCapital\":\"1020万美元\"," +
-            "\"establishTime\":\"2000-11-29\"" +
-            "}," +
-            "{" +
-            "\"companyAID\":\"23e81af89d45f9ad1961fae378a16814\"," +
+            "\"industry\":\"仪器仪表制造业\"}," +
+            "{\"companyAID\":\"23e81af89d45f9ad1961fae378a16814\"," +
             "\"companyName\":\"苏州中新金属制造有限公司\"," +
             "\"regStatus\":\"在业\"," +
             "\"legalPersonName\":\"常桂平\"," +
-            "\"regCapital\":\"3000万元人民币\"," +
-            "\"establishTime\":\"2004-07-30\"" +
-            "}" +
-            "]}";
+            "\"industry\":\"金属制品业\"}]" +
+            "}";
 
     @Override
     protected void initViews() {
@@ -89,7 +84,7 @@ public class CompanyListActivity extends BaseActivity {
         @Override
         public void onBindViewHolder(CompanyListViewHolder holder, int position) {
             holder.companyName.setText(companyDataList.get(position).getCompanyName());
-            holder.companyRegStatus.setText(companyDataList.get(position).getRegStatus());
+            //holder.companyRegStatus.setText(companyDataList.get(position).getRegStatus());
 
         }
 
@@ -102,8 +97,8 @@ public class CompanyListActivity extends BaseActivity {
     class CompanyListViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.company_name)
         TextView companyName;
-        @Bind(R.id.company_regstatus)
-        TextView companyRegStatus;
+//        @Bind(R.id.company_regstatus)
+//        TextView companyRegStatus;
 
         public CompanyListViewHolder(View itemView) {
             super(itemView);
@@ -117,7 +112,7 @@ public class CompanyListActivity extends BaseActivity {
 
     @Override
     public String getActionBarTitle() {
-        return "查询结果";
+        return "查询";
     }
 
 }
