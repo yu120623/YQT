@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cundong.recyclerview.RecyclerViewUtils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.yqt360.www.R;
@@ -32,6 +31,9 @@ import rx.schedulers.Schedulers;
 public class CompanyListActivity extends BaseActivity {
     @Bind(R.id.company_list)
     RecyclerView companyList;
+
+    @Bind(R.id.rs)
+    TextView rs;
 
     private List<CompanyList.Company> companyDataList = new ArrayList<>();
     private CompanyListAdapter companyListAdapter;
@@ -59,18 +61,19 @@ public class CompanyListActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
-        init();
+        initData();
+        showBackBtn();
         companyListAdapter = new CompanyListAdapter();
         companyList.setLayoutManager(new LinearLayoutManager(context));
         companyList.setAdapter(companyListAdapter);
 
     }
 
-    void init(){
+    void initData(){
         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm").create();
         HttpData data = gson.fromJson(strJson, HttpData.class);
         companyDataList = data.getData();
-
+        rs.setText("为您发现 "+companyDataList.size()+" 家公司\n可点击省份筛选");
     }
 
 

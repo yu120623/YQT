@@ -2,20 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c0c0c0">
-    <LinearLayout
+    android:background="#c0c0c0"
+    android:orientation="vertical">
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#f0f0">
+        android:layout_height="wrap_content"
+        android:background="#4a86e8">
         <TextView
+            android:id="@+id/rs"
+            android:textColor="@color/colorText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
             android:text="全国"
+            android:layout_alignParentRight="true"
             android:textColor="@color/colorText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/company_list"
